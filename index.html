@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo</title>
+</head>
+<body>
+    <div id="papasote">
+        <h1 v-if="encabezado_1">Almuerzos ricos para {{nombre}}</h1>
+        <ul>
+            <li v-for="comida in comidas">{{comida}}</li>
+        </ul>
+        <h1 v-if="encabezado_2">Postres ricos para {{nombre}}</h1>
+        <ul>
+            <li v-for="postre in postres">{{postre}}</li>
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const miApp=new Vue({
+            el:'#papasote',
+            data:{
+                encabezado_1:true,
+                encabezado_2:true,
+                nombre:'Odrita',
+                comidas:['suhsi','pizza','cazuela','chapsui'],
+                postres: ['pie de limon','flan','arroz con leche']
+            }
+        });
+    </script>
+</body>
+</html>
